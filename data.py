@@ -14,7 +14,7 @@ def nyu_resize(img, resolution=480, padding=6):
     from skimage.transform import resize
     return resize(img, (resolution, int(resolution*4/3)), preserve_range=True, mode='reflect', anti_aliasing=True )
 
-def get_nyu_data(batch_size, nyu_data_zipfile='/content/drive/MyDrive/nyu_dataset.zip'):
+def get_nyu_data(batch_size, nyu_data_zipfile='/content/drive/MyDrive/nyu_data.zip'):
     data = extract_zip(nyu_data_zipfile)
 
     nyu2_train = list((row.split(',') for row in (data['data/nyu2_train.csv']).decode("utf-8").split('\n') if len(row) > 0))
