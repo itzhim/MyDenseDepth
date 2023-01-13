@@ -28,8 +28,8 @@ def get_nyu_data(batch_size, nyu_data_zipfile='/content/drive/MyDrive/nyu_data.z
 
     # Helpful for testing...
     if False:
-        nyu2_train = nyu2_train[:5000]
-        nyu2_test = nyu2_test[:5000]
+        nyu2_train = nyu2_train[:10000]
+        nyu2_test = nyu2_test[:10000]
 
     return data, nyu2_train, nyu2_test, shape_rgb, shape_depth
 
