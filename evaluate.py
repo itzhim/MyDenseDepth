@@ -5,7 +5,7 @@ import argparse
 
 # Kerasa / TensorFlow
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5'
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from layers import BilinearUpSampling2D
 from loss import depth_loss_function
 from utils import predict, load_images, display_images, evaluate
@@ -27,7 +27,7 @@ model = load_model(args.model, custom_objects=custom_objects, compile=False)
 print('Loading test data...', end='')
 import numpy as np
 from data import extract_zip
-data = extract_zip('nyu_test.zip')
+data = extract_zip('/content/drive/MyDrive/nyu_test.zip')
 from io import BytesIO
 rgb = np.load(BytesIO(data['eigen_test_rgb.npy']))
 depth = np.load(BytesIO(data['eigen_test_depth.npy']))
